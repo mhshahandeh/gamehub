@@ -33,23 +33,18 @@ const Navbar = () => {
       </Show>
       <Show below="lg">
         <HStack padding="10px">
-          <IoMenu size="30px" onClick={onOpen} />
-          <Drawer
-            onClose={onClose}
-            isOpen={isOpen}
-            size={"xs"}
-            placement="right"
-          >
+          <IoMenu cursor="pointer" size="30px" onClick={onOpen} />
+          <Drawer onClose={onClose} isOpen={isOpen} size="full" placement="top">
             <DrawerOverlay />
             <DrawerContent>
-              <DrawerCloseButton size="lg" paddingTop={9} />
+              <DrawerCloseButton size="100%" marginTop={7} />
               <DrawerHeader paddingLeft={4}>
-                <Link to="/">
+                <Link onClick={onClose} to="/">
                   <Image src={logo} boxSize="60px" objectFit="cover" />
                 </Link>
               </DrawerHeader>
               <DrawerBody>
-                <GenreList />
+                <GenreList onClose={onClose} />
               </DrawerBody>
             </DrawerContent>
           </Drawer>

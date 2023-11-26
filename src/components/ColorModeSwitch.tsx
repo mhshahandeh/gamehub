@@ -5,7 +5,7 @@ const ColorModeSwitch = () => {
   const { toggleColorMode, colorMode } = useColorMode();
 
   return (
-    <Stack>
+    <Stack cursor="pointer">
       {colorMode === "dark" ? (
         <FaSun size="25px" onClick={toggleColorMode} />
       ) : (

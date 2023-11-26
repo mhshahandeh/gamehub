@@ -10,11 +10,17 @@ import {
 import useGenres from "../hooks/useGenres";
 import getCroppedImageUrl from "../services/image-url";
 import useGameQueryStore from "../store";
+import { useNavigate } from "react-router-dom";
 
-const GenreList = () => {
+interface Props {
+  onClose: () => void;
+}
+
+const GenreList = ({ onClose }: Props) => {
   const { data, isLoading, error } = useGenres();
   const selectedGenreId = useGameQueryStore((s) => s.gameQuery.genreId);
   const setSelectedGenreId = useGameQueryStore((s) => s.setGenreId);
+  const navigate = useNavigate();
 
   if (error) return null;
 
@@ -35,7 +41,11 @@ const GenreList = () => {
                 src={getCroppedImageUrl(genre.image_background)}
               />
               <Button
-                onClick={() => setSelectedGenreId(genre.id)}
+                onClick={() => {
+                  setSelectedGenreId(genre.id);
+                  navigate("/");
+                  onClose();
+                }}
                 variant="link"
                 fontSize="lg"
                 fontWeight={genre.id === selectedGenreId ? "bold" : "normal"}
