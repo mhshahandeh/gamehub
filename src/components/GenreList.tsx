@@ -13,7 +13,7 @@ import useGameQueryStore from "../store";
 import { useNavigate } from "react-router-dom";
 
 interface Props {
-  onClose: () => void;
+  onClose?: () => void;
 }
 
 const GenreList = ({ onClose }: Props) => {
@@ -44,7 +44,7 @@ const GenreList = ({ onClose }: Props) => {
                 onClick={() => {
                   setSelectedGenreId(genre.id);
                   navigate("/");
-                  onClose();
+                  if (onClose) onClose();
                 }}
                 variant="link"
                 fontSize="lg"
