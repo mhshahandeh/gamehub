@@ -2,7 +2,7 @@
 **گیم هاب** یک وبسایت جستجوی بازی های کامپیوتری براساس ژانر و پلتفرم است که کاربران میتوانند با استفاده از آن بازی های مور علاقه خود را از نظر امتیاز و داستان و تریلر بررسی کنند. (هم وطن عزیز بدلیل فیلتر بودن سایت api بکارگرفته شده با vpn وارد شوید) 
 
 ## Screenshots
-![Gamehub website screenshot](https://github.com/mhshahandeh/gamehub/blob/main/public/website-screenshot.png?raw=true)
+![Gamehub website screenshot](/public/website-screenshot.png)
 
 
 ## Technologies Used
